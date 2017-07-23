@@ -1,0 +1,4 @@
+services:
+    kuna.client:
+        class: madmis\KunaApi\KunaApi
+        arguments: ["%kuna.uri%", "%public.key%", "%secret.key%"]

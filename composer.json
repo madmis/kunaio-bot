@@ -1,0 +1,20 @@
+{
+  "name": "madmis/kunaio-bot",
+  "description": "Kuna.io trading bot using madmis/kuna-api package",
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.1",
+    "symfony/console": "^4.0@dev",
+    "symfony/dependency-injection": "^4.0@dev",
+    "symfony/config": "^4.0@dev",
+    "symfony/yaml": "^4.0@dev",
+    "madmis/kuna-api": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "madmis\\": "src/"
+    }
+  }
+}

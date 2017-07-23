@@ -1,0 +1,4 @@
+parameters:
+    kuna.uri: "https://kuna.io"
+    public.key: ""
+    secret.key: ""

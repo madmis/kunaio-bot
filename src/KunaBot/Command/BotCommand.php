@@ -2,6 +2,7 @@
 
 namespace madmis\KunaBot\Command;
 
+use madmis\KunaApi\Http;
 use madmis\KunaApi\KunaApi;
 use madmis\KunaApi\Model\History;
 use madmis\KunaApi\Model\MyAccount;
@@ -21,6 +22,15 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BotCommand extends ContainerAwareCommand
 {
+    /**
+     * @var array
+     */
+    private $minVolumes = [
+        Http::PAIR_BTCUAH => 0.001,
+        Http::PAIR_ETHUAH => 0.001,
+        Http::PAIR_GOLBTC => 0.00001,
+    ];
+
     const DEF_SCALE = 10;
 
     /**
@@ -88,6 +98,7 @@ class BotCommand extends ContainerAwareCommand
 
     /**
      * @param string $pair
+     * @throws BreakIterationException
      */
     protected function quoteFundsProcessing(string $pair)
     {
@@ -119,6 +130,18 @@ class BotCommand extends ContainerAwareCommand
                 // make buy price slightly more current buy price
                 $buyPrice = bcadd($ticker->getBuy(), $increaseUnit, self::DEF_SCALE);
                 $buyVolume = bcdiv($quoteFunds, $buyPrice, self::DEF_SCALE);
+
+                if ($buyVolume < $this->minVolumes[$pair]) {
+                    $this
+                        ->output
+                        ->writeln("<r>Can't buy volume: {$buyVolume}. Min. buy volume is: {$this->minVolumes[$pair]}.</r>");
+                    $e = new BreakIterationException();
+                    $e->setTimeout(10);
+
+                    throw $e;
+                }
+
+
                 $this->output->writeln("\t<w>Buy price: {$buyPrice}</w>");
                 $this->output->writeln("\t<w>Buy volume: {$buyVolume}</w>");
 

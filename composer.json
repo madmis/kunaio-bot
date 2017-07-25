@@ -10,7 +10,8 @@
     "symfony/dependency-injection": "^4.0@dev",
     "symfony/config": "^4.0@dev",
     "symfony/yaml": "^4.0@dev",
-    "madmis/kuna-api": "^1.0.0"
+    "madmis/kuna-api": "^1.0.0",
+    "ext-bcmath": "^7.1"
   },
   "autoload": {
     "psr-4": {

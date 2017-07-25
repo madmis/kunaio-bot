@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e962f4c863d2c5221380056c5692d25",
+    "content-hash": "a2086da78e9202cdefc119486f5131c9",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "2016f4e48149d8c1ce65eb25d7f641fb3760b40c"
+                "reference": "2497b1f9db56278d3ad2248f9e4bdbbbaa271c3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/2016f4e48149d8c1ce65eb25d7f641fb3760b40c",
-                "reference": "2016f4e48149d8c1ce65eb25d7f641fb3760b40c",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/2497b1f9db56278d3ad2248f9e4bdbbbaa271c3e",
+                "reference": "2497b1f9db56278d3ad2248f9e4bdbbbaa271c3e",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +31,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -72,7 +72,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2017-06-28 04:31:58"
+            "time": "2017-07-22 11:08:38"
         },
         {
             "name": "doctrine/instantiator",
@@ -80,28 +80,28 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "5acd2bd8c2b600ad5cc4c9180ebf0a930604d6a5"
+                "reference": "185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/5acd2bd8c2b600ad5cc4c9180ebf0a930604d6a5",
-                "reference": "5acd2bd8c2b600ad5cc4c9180ebf0a930604d6a5",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda",
+                "reference": "185b8868aa9bf7159f5f953ed5afb2d7fcdc3bda",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3,<8.0-DEV"
+                "php": "^7.1"
             },
             "require-dev": {
                 "athletic/athletic": "~0.1.8",
                 "ext-pdo": "*",
                 "ext-phar": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~2.0"
+                "phpunit/phpunit": "^6.2.3",
+                "squizlabs/php_codesniffer": "^3.0.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -126,7 +126,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2017-02-16 16:15:51"
+            "time": "2017-07-22 11:58:36"
         },
         {
             "name": "doctrine/lexer",
@@ -134,12 +134,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+                "reference": "cc709ba91eee09540091ad5a5f2616727662e41b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/cc709ba91eee09540091ad5a5f2616727662e41b",
+                "reference": "cc709ba91eee09540091ad5a5f2616727662e41b",
                 "shasum": ""
             },
             "require": {
@@ -152,8 +152,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -180,7 +180,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2017-07-24 09:37:08"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -455,12 +455,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "57ca3c4b2dc13a69f80bf4cb851a74dac9b10375"
+                "reference": "fe455eed56b5bc6468615d585217984cc979fb38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/57ca3c4b2dc13a69f80bf4cb851a74dac9b10375",
-                "reference": "57ca3c4b2dc13a69f80bf4cb851a74dac9b10375",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/fe455eed56b5bc6468615d585217984cc979fb38",
+                "reference": "fe455eed56b5bc6468615d585217984cc979fb38",
                 "shasum": ""
             },
             "require": {
@@ -530,20 +530,20 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2017-07-20 09:25:12"
+            "time": "2017-07-24 09:44:23"
         },
         {
             "name": "madmis/kuna-api",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/madmis/kuna-api.git",
-                "reference": "3bee1f0ecee387e2017f667bdd8589a6d2e8c69b"
+                "reference": "85a241b95048b5c37a8ab622a1cb763acc50f63d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/madmis/kuna-api/zipball/3bee1f0ecee387e2017f667bdd8589a6d2e8c69b",
-                "reference": "3bee1f0ecee387e2017f667bdd8589a6d2e8c69b",
+                "url": "https://api.github.com/repos/madmis/kuna-api/zipball/85a241b95048b5c37a8ab622a1cb763acc50f63d",
+                "reference": "85a241b95048b5c37a8ab622a1cb763acc50f63d",
                 "shasum": ""
             },
             "require": {
@@ -575,7 +575,7 @@
                 "kuna.io",
                 "rest"
             ],
-            "time": "2017-07-21T15:30:13+00:00"
+            "time": "2017-07-24T13:19:19+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -889,12 +889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "108d5dec0f84d1954cdd629438c370dc2257fc7f"
+                "reference": "b835b204093dbd2e78b948d641c148be414530e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/108d5dec0f84d1954cdd629438c370dc2257fc7f",
-                "reference": "108d5dec0f84d1954cdd629438c370dc2257fc7f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/b835b204093dbd2e78b948d641c148be414530e7",
+                "reference": "b835b204093dbd2e78b948d641c148be414530e7",
                 "shasum": ""
             },
             "require": {
@@ -951,7 +951,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-21 11:08:07"
+            "time": "2017-07-23 10:34:49"
         },
         {
             "name": "symfony/debug",
@@ -1309,7 +1309,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "ext-bcmath": "^7.1"
     },
     "platform-dev": []
 }

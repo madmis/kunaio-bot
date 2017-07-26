@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2086da78e9202cdefc119486f5131c9",
+    "content-hash": "9af4947424e71dbb09a74ea3d45d3660",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -534,16 +534,16 @@
         },
         {
             "name": "madmis/kuna-api",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/madmis/kuna-api.git",
-                "reference": "85a241b95048b5c37a8ab622a1cb763acc50f63d"
+                "reference": "ffedcf9b0df05068a700ee356cdcaaa66c8e8dae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/madmis/kuna-api/zipball/85a241b95048b5c37a8ab622a1cb763acc50f63d",
-                "reference": "85a241b95048b5c37a8ab622a1cb763acc50f63d",
+                "url": "https://api.github.com/repos/madmis/kuna-api/zipball/ffedcf9b0df05068a700ee356cdcaaa66c8e8dae",
+                "reference": "ffedcf9b0df05068a700ee356cdcaaa66c8e8dae",
                 "shasum": ""
             },
             "require": {
@@ -575,7 +575,7 @@
                 "kuna.io",
                 "rest"
             ],
-            "time": "2017-07-24T13:19:19+00:00"
+            "time": "2017-07-26T04:33:51+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -1015,12 +1015,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "8de4311a5b58978a74492fd3ee00451c9ced727c"
+                "reference": "0e9e292b0c0f4ed3dd4aafe13aef3213bf0b8ad5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/8de4311a5b58978a74492fd3ee00451c9ced727c",
-                "reference": "8de4311a5b58978a74492fd3ee00451c9ced727c",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/0e9e292b0c0f4ed3dd4aafe13aef3213bf0b8ad5",
+                "reference": "0e9e292b0c0f4ed3dd4aafe13aef3213bf0b8ad5",
                 "shasum": ""
             },
             "require": {
@@ -1077,7 +1077,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-21 11:08:07"
+            "time": "2017-07-24 19:54:53"
         },
         {
             "name": "symfony/filesystem",
@@ -1242,6 +1242,74 @@
             "time": "2017-06-14 15:44:48"
         },
         {
+            "name": "symfony/var-dumper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "f4212c5aa0ef657fd2ee14c46c46d7d04c65800b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f4212c5aa0ef657fd2ee14c46c46d7d04c65800b",
+                "reference": "f4212c5aa0ef657fd2ee14c46c46d7d04c65800b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "twig/twig": "~1.34|~2.4"
+            },
+            "suggest": {
+                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
+                "ext-intl": "To show region name in time zone dump"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2017-07-24 06:49:18"
+        },
+        {
             "name": "symfony/yaml",
             "version": "dev-master",
             "source": {
@@ -1304,7 +1372,9 @@
         "symfony/console": 20,
         "symfony/dependency-injection": 20,
         "symfony/config": 20,
-        "symfony/yaml": 20
+        "symfony/yaml": 20,
+        "symfony/debug": 20,
+        "symfony/var-dumper": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

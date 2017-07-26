@@ -2,6 +2,7 @@
 
 namespace madmis\KunaBot\Command;
 
+use madmis\KunaApi\Exception\IncorrectResponseException;
 use madmis\KunaApi\Http;
 use madmis\KunaApi\KunaApi;
 use madmis\KunaApi\Model\History;
@@ -15,6 +16,9 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Debug\Debug;
+use Symfony\Component\Debug\Exception\FlattenException;
+use Symfony\Component\VarDumper\VarDumper;
 
 /**
  * Class BotCommand
@@ -83,8 +87,14 @@ class BotCommand extends ContainerAwareCommand
                 // Check quote funds and create BUY order if possible
                 $this->quoteFundsProcessing($pair);
             } catch (BreakIterationException $e) {
+                if ($e->getMessage()) {
+                    $output->writeln("<r>{$e->getMessage()}</r>");
+                }
                 sleep($e->getTimeout());
                 continue;
+            } catch (\Throwable $e) {
+                $output->writeln("<r>Unhandled exception: {$e->getMessage()}</r>");
+                VarDumper::dump(FlattenException::create($e)->toArray());
             } finally {
                 if ($showMemoryUsage) {
                     $usage = memory_get_peak_usage(true) / 1024;
@@ -245,7 +255,14 @@ class BotCommand extends ContainerAwareCommand
         /** @var KunaApi $kuna */
         $kuna = $this->getContainer()->get('kuna.client');
         /** @var Order[] $activeOrders */
-        $activeOrders = $kuna->signed()->activeOrders($pair, true);
+        try {
+            $activeOrders = $kuna->signed()->activeOrders($pair, true);
+        } catch (IncorrectResponseException $e) {
+            $e = new BreakIterationException('Received incorrect response from Kuna API.');
+            $e->setTimeout(10);
+            throw $e;
+        }
+
         if ($activeOrders) {
             $this->output->writeln(sprintf(
                 '<y>Current pair %s has active orders: %s</y>',
@@ -260,9 +277,8 @@ class BotCommand extends ContainerAwareCommand
             }
             $this->output->writeln('<y>Wait until active orders will be executed or closed.</y>');
 
-            $e = new BreakIterationException('Wait until active orders will be executed or closed.');
+            $e = new BreakIterationException();
             $e->setTimeout(30);
-
             throw $e;
         }
     }

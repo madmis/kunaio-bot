@@ -2,8 +2,8 @@
 
 namespace madmis\KunaBot\Command;
 
+use madmis\KunaApi\Api;
 use madmis\KunaApi\Exception\IncorrectResponseException;
-use madmis\KunaApi\Http;
 use madmis\KunaApi\KunaApi;
 use madmis\KunaApi\Model\History;
 use madmis\KunaApi\Model\MyAccount;
@@ -16,7 +16,6 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\VarDumper\VarDumper;
 
@@ -30,9 +29,9 @@ class BotCommand extends ContainerAwareCommand
      * @var array
      */
     private $minVolumes = [
-        Http::PAIR_BTCUAH => 0.001,
-        Http::PAIR_ETHUAH => 0.001,
-        Http::PAIR_GOLBTC => 0.00001,
+        Api::PAIR_BTCUAH => 0.001,
+        Api::PAIR_ETHUAH => 0.001,
+        Api::PAIR_GOLBTC => 0.00001,
     ];
 
     const DEF_SCALE = 10;
